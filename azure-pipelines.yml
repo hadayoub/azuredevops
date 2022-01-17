@@ -10,9 +10,10 @@ pool:
   vmImage: ubuntu-latest
 
 stages:
+
 - stage: init
   jobs:
-  - job: init_job
+  - job: init
     steps:
     - script: terraform init
       displayName: 'terraform_init'
@@ -20,14 +21,14 @@ stages:
 
 - stage: validate
   jobs:
-  - job: validate_job
+  - job: validate
     steps:
     - script: terraform validate
       displayName: 'terraform_validate'
 
 - stage: formate
   jobs:
-  - job: init_formate
+  - job: formate
     steps:
     - script: terraform fmt
       displayName: 'terraform_format'
