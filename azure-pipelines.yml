@@ -9,15 +9,25 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- script: terraform init
-  displayName: 'terraform_init'
+stages:
+- stage: init
+  jobs:
+  - job: init_job
+    steps:
+    - script: terraform init
+      displayName: 'terraform_init'
 
-- script: terraform fmt
-  displayName: 'terraform_format'  
 
-- script: terraform validate
-  displayName: 'terraform_validate'
+- stage: validate
+  jobs:
+  - job: validate_job
+    steps:
+    - script: terraform validate
+      displayName: 'terraform_validate'
 
-- script: terraform plan
-  displayName: 'terraform plan'
+- stage: formate
+  jobs:
+  - job: init_formate
+    steps:
+    - script: terraform fmt
+      displayName: 'terraform_format'
