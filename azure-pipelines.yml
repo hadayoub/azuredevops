@@ -8,11 +8,10 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
-stages:
-- stage: terraform init
+
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- script: terraform init
+  displayName: 'terraform_init'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
