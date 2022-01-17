@@ -12,7 +12,10 @@ pool:
 steps:
 - script: terraform init
   displayName: 'terraform_init'
-  
+
+- script: terraform fmt
+  displayName: 'terraform_format'  
+
 - script: terraform validate
   displayName: 'terraform_validate'
 
