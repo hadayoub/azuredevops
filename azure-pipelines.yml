@@ -10,14 +10,11 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- script: terraform validate
+  displayName: 'terraform_validate'
+
 - script: terraform init
   displayName: 'terraform_init'
 
-steps:
 - script: terraform plan
-  displayName: 'terraform_plan'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  displayName: 'terraform plan'
