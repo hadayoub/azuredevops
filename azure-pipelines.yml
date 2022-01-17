@@ -23,6 +23,7 @@ stages:
   jobs:
   - job: validate
     steps:
+    - script: terraform init
     - script: terraform validate
       displayName: 'terraform_validate'
 
