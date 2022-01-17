@@ -10,11 +10,11 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: terraform validate
-  displayName: 'terraform_validate'
-
 - script: terraform init
   displayName: 'terraform_init'
+  
+- script: terraform validate
+  displayName: 'terraform_validate'
 
 - script: terraform plan
   displayName: 'terraform plan'
